@@ -30,7 +30,7 @@ def add(word, transition, counter, node=0):
             return counter
 
 def read_into_file(transition, text="" , node=0):
-    # Move the resulting data structure to a file. The given function call moves all printouts into tree.txt
+    # Move the resulting Data structure to a file. The given function call moves all printouts into tree.txt
     # Format of the tree: list of edges
     for letter in transition[node]:
         end_node, is_last = transition[node][letter]
@@ -41,7 +41,7 @@ def read_into_file(transition, text="" , node=0):
 
 transition = {0: {}}
 
-# read data from the file from cmd
+# read Data from the file from cmd
 filename = sys.argv[1]
 with open(filename, "r", encoding='utf-8') as f:
     count = 0

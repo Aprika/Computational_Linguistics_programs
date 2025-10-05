@@ -34,6 +34,6 @@ def anagram(words):
 
 
 
-read_lines = read_data("../data/zeit-10M-tagged")
+read_lines = read_data("../Data/zeit-10M-tagged")
 anagram(read_lines)
 

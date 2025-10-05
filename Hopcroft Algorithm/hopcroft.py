@@ -60,7 +60,7 @@ class Automaton:
             Uses the Hopcroft algorithm to reduce the automaton
             :return: Reduced automaton (with error state "?" removed in advance)
             """
-        # Initialize the required data structures
+        # Initialize the required Data structures
         w = set()
         p = set()
         f = self.final_states

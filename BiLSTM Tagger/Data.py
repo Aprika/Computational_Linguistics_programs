@@ -47,7 +47,7 @@ class Data:
 
     def init_train(self, training, development, num_words):
         """
-        Constructor function of the class Data. Reads in the training and development data, creates an index for the num_words most frequent words and an index for all tags.
+        Constructor function of the class Data. Reads in the training and development Data, creates an index for the num_words most frequent words and an index for all tags.
         :param training:
         :param development:
         :param num_words:
@@ -56,7 +56,7 @@ class Data:
         self.trainSentences = read_data(training)
         self.devSentences = read_data(development)
 
-        # These attributes apply only to the training data
+        # These attributes apply only to the training Data
         word_counts = Counter(w for words, _ in self.trainSentences for w in words)
         wordlist, _ = zip(*Counter(word_counts).most_common(num_words))
         self.word_index = {word: idx for idx, word in enumerate(wordlist, start=1)}

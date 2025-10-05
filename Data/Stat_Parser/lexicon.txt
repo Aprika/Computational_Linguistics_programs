@@ -1,0 +1,15 @@
+0.6 DT the
+0.4 DT a
+0.2 A old
+0.3 A young
+0.2 A big
+0.3 A small
+0.2 N man
+0.3 N hill
+0.2 N telescope
+0.2 N girl
+0.1 N saw
+0.4 V saw
+0.6 V slept
+0.6 P on
+0.4 P with
