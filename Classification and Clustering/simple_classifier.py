@@ -1,3 +1,4 @@
+from pathlib import PurePath
 from sklearn.linear_model import LogisticRegression
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.pipeline import make_pipeline
@@ -6,12 +7,15 @@ import argparse
 import json
 import sys
 
+# Terminal command to run classifier:
+# > python simple_classifier.py --train_path <training_file_path> --eval_path <evaluation_file_path>
+
 class Classifier:
     def __init__(self, train_path, test_path):
-        with open(train_path) as train:
+        with open(PurePath(train_path)) as train:
             self.training_data = json.load(train)
 
-        with open(test_path) as test:
+        with open(PurePath(test_path)) as test:
             self.testing_data = json.load(test)
 
         # Extract the relevant data from json file
@@ -37,8 +41,11 @@ class Classifier:
 
         # Evaluate performance using Precision, Recall and F1-Score (Seaborn heat map?)
         precision = metrics.precision_score(self.eval_labels, predicted_labels)
+        print(f'Precision: {precision}')
         recall = metrics.recall_score(self.eval_labels, predicted_labels)
+        print(f'Recall: {recall}')
         f1_score = metrics.f1_score(self.eval_labels, predicted_labels)
+        print(f'F1-Score: {f1_score}')
 
 
 
